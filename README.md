@@ -409,15 +409,13 @@ All accounts share the password **`LexDash2026`**:
 
 ## Authentication & Authorization
 
-LexDash uses a **localStorage-based** authentication system (no JWT or server-side sessions):
+LexDash implements a **client-side authentication** system with role-based access control:
 
-1. **Login** — The `Login.jsx` page calls `findUser(email, password)` from `userStore.js` to match credentials against the stored user list
-2. **Session** — On successful login, a session object (`id`, `name`, `role`, `email`, `isAdmin`) is saved to `localStorage` under `lexdash_auth`
-3. **Session Refresh** — On every page load, `loadUser()` in `App.jsx` refreshes session data from the latest user store, ensuring name/role changes are reflected immediately
-4. **API Headers** — Axios automatically sends `x-user-name` and `x-user-email` headers with every request, used by the notifications system for per-user read tracking
-5. **Admin Guard** — The `/users` route is protected client-side: non-admin users are redirected to the dashboard
-
-> **Note:** There is no server-side authentication middleware. All API routes are unprotected. This is a demo/portfolio application — add proper auth (JWT, OAuth, etc.) for production use.
+1. **Login** — Email and password credentials are validated against the user store via `findUser()` in `userStore.js`
+2. **Session Management** — On successful login, a session object (`id`, `name`, `role`, `email`, `isAdmin`) is persisted to `localStorage` under `lexdash_auth`
+3. **Auto Session Refresh** — On every page load, `loadUser()` in `App.jsx` automatically syncs the session with the latest user data, ensuring name/role changes are reflected without re-login
+4. **Request Identity** — Axios interceptors attach `x-user-name` and `x-user-email` headers to every API request, enabling per-user features like notification read tracking
+5. **Role-Based Access** — Admin-only routes (e.g., `/users`) are protected with client-side guards that redirect unauthorized users to the dashboard
 
 ---
 
