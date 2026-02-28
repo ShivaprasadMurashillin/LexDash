@@ -1,7 +1,7 @@
 /**
  * Seed Route  –  GET /api/seed
  * Wipes all collections and inserts realistic demo records.
- * Unique dataset — LexDash original.
+ * Unique dataset — Brieflytix original.
  */
 const express      = require('express');
 const router       = express.Router();
@@ -685,7 +685,7 @@ router.get('/', async (req, res) => {
 
     res.json({
       success: true,
-      message: '✅ Database seeded with unique LexDash demo data!',
+      message: '✅ Database seeded with unique Brieflytix demo data!',
       summary: {
         clients: 10,
         cases: 18,

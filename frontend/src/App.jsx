@@ -19,7 +19,7 @@ import { getUsers } from './utils/userStore';
 import { setApiUser } from './api';
 
 /* ── Auth helpers ─────────────────────────────────────────────────────── */
-const AUTH_KEY = 'lexdash_auth';
+const AUTH_KEY = 'brieflytix_auth';
 
 function loadUser() {
   try {

@@ -5,15 +5,15 @@
  * On first run, seeds 5 default users.
  */
 
-const USERS_KEY = 'lexdash_users';
-const USERS_VERSION_KEY = 'lexdash_users_version';
-const CURRENT_VERSION = 2; // bump to force localStorage refresh
+const USERS_KEY = 'brieflytix_users';
+const USERS_VERSION_KEY = 'brieflytix_users_version';
+const CURRENT_VERSION = 3; // bump to force localStorage refresh
 
 const DEFAULT_USERS = [
   {
     id: '1',
-    email: 'admin@lexdash.com',
-    password: 'LexDash2026',
+    email: 'admin@brieflytix.com',
+    password: 'Brieflytix2026',
     name: 'Elena Novak',
     role: 'Senior Partner',
     phone: '+1 (929) 555-0301',
@@ -23,8 +23,8 @@ const DEFAULT_USERS = [
   },
   {
     id: '2',
-    email: 'marcus@lexdash.com',
-    password: 'LexDash2026',
+    email: 'marcus@brieflytix.com',
+    password: 'Brieflytix2026',
     name: 'Marcus Garrison',
     role: 'Partner',
     phone: '+1 (713) 555-0302',
@@ -34,8 +34,8 @@ const DEFAULT_USERS = [
   },
   {
     id: '3',
-    email: 'isabela@lexdash.com',
-    password: 'LexDash2026',
+    email: 'isabela@brieflytix.com',
+    password: 'Brieflytix2026',
     name: 'Isabela de la Cruz',
     role: 'Associate Attorney',
     phone: '+1 (786) 555-0303',
@@ -45,8 +45,8 @@ const DEFAULT_USERS = [
   },
   {
     id: '4',
-    email: 'chidi@lexdash.com',
-    password: 'LexDash2026',
+    email: 'chidi@brieflytix.com',
+    password: 'Brieflytix2026',
     name: 'Chidi Okonkwo',
     role: 'Associate Attorney',
     phone: '+1 (404) 555-0304',
@@ -56,8 +56,8 @@ const DEFAULT_USERS = [
   },
   {
     id: '5',
-    email: 'fiona@lexdash.com',
-    password: 'LexDash2026',
+    email: 'fiona@brieflytix.com',
+    password: 'Brieflytix2026',
     name: 'Fiona Brennan',
     role: 'Junior Associate',
     phone: '+1 (504) 555-0305',
@@ -90,7 +90,7 @@ export function getUsers() {
 /** Get the currently logged-in user's name. */
 export function getCurrentUserName() {
   try {
-    const raw = localStorage.getItem('lexdash_auth');
+    const raw = localStorage.getItem('brieflytix_auth');
     if (raw) return JSON.parse(raw).name || '';
   } catch { /* ignore */ }
   return '';

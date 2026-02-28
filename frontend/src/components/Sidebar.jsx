@@ -71,7 +71,7 @@ export default function Sidebar({ collapsed, onToggle, user }) {
           <div className="flex items-center gap-2.5 animate-fade-in">
             <Scale size={22} className="text-gold shrink-0" />
             <span className="font-heading text-xl font-bold text-gold tracking-wide">
-              LexDash
+              Brieflytix
             </span>
           </div>
         )}

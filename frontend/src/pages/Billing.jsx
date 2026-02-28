@@ -355,7 +355,7 @@ export default function Billing() {
       flat,
       ['invoiceNumber', 'client', 'case', 'caseTitle', 'attorney', 'hours', 'rate', 'amount', 'status', 'dueDate', 'paidDate'],
       { invoiceNumber: 'Invoice #', client: 'Client', case: 'Case #', caseTitle: 'Case', rate: 'Rate ($/hr)' },
-      'lexdash-invoices.csv'
+      'brieflytix-invoices.csv'
     );
   };
 

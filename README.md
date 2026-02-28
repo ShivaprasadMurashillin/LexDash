@@ -1,4 +1,4 @@
-﻿# ⚖️ LexDash — Attorney Case Management Dashboard
+﻿# ⚖️ Brieflytix — Attorney Case Management Dashboard
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](https://nodejs.org)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://reactjs.org)
@@ -6,7 +6,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Vite](https://img.shields.io/badge/Vite-4.5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
 
-**LexDash** is a full-stack **MERN** (MongoDB · Express · React · Node.js) legal case management dashboard built for law firms and solo practitioners. Featuring a refined dark navy-and-gold design system, it provides end-to-end management of cases, clients, documents, tasks, billing/invoicing, analytics, a calendar, and more — all from a single unified interface.
+**Brieflytix** is a full-stack **MERN** (MongoDB · Express · React · Node.js) legal case management dashboard built for law firms and solo practitioners. Featuring a refined dark navy-and-gold design system, it provides end-to-end management of cases, clients, documents, tasks, billing/invoicing, analytics, a calendar, and more — all from a single unified interface.
 
 ---
 
@@ -109,8 +109,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/ShivaprasadMurashillin/LexDash.git
-cd LexDash
+git clone https://github.com/ShivaprasadMurashillin/Brieflytix-Legal-Dashboard.git
+cd Brieflytix-Legal-Dashboard
 
 # Install backend dependencies
 cd backend
@@ -130,7 +130,7 @@ Create `.env` files in both directories:
 
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/lexdash
+MONGODB_URI=mongodb://localhost:27017/brieflytix
 NODE_ENV=development
 FRONTEND_URL=http://localhost:5173
 ```
@@ -163,15 +163,15 @@ After starting both servers, click the **🌱 Seed Data** button in the navbar (
 
 ## Default User Accounts
 
-All accounts share the password **`LexDash2026`**:
+All accounts share the password **`Brieflytix2026`**:
 
-| Email                 | Name               | Role               | Admin |
-| --------------------- | ------------------ | ------------------ | ----- |
-| `admin@lexdash.com`   | Elena Novak        | Senior Partner     | ✅    |
-| `marcus@lexdash.com`  | Marcus Garrison    | Partner            | —     |
-| `isabela@lexdash.com` | Isabela de la Cruz | Associate Attorney | —     |
-| `chidi@lexdash.com`   | Chidi Okonkwo      | Associate Attorney | —     |
-| `fiona@lexdash.com`   | Fiona Brennan      | Junior Associate   | —     |
+| Email                    | Name               | Role               | Admin |
+| ------------------------ | ------------------ | ------------------ | ----- |
+| `admin@brieflytix.com`   | Elena Novak        | Senior Partner     | ✅    |
+| `marcus@brieflytix.com`  | Marcus Garrison    | Partner            | —     |
+| `isabela@brieflytix.com` | Isabela de la Cruz | Associate Attorney | —     |
+| `chidi@brieflytix.com`   | Chidi Okonkwo      | Associate Attorney | —     |
+| `fiona@brieflytix.com`   | Fiona Brennan      | Junior Associate   | —     |
 
 > User accounts are stored in the browser's `localStorage` with automatic versioned refresh — when defaults are updated in the source code, existing sessions are seamlessly upgraded on next page load.
 
@@ -409,10 +409,10 @@ All accounts share the password **`LexDash2026`**:
 
 ## Authentication & Authorization
 
-LexDash implements a **client-side authentication** system with role-based access control:
+Brieflytix implements a **client-side authentication** system with role-based access control:
 
 1. **Login** — Email and password credentials are validated against the user store via `findUser()` in `userStore.js`
-2. **Session Management** — On successful login, a session object (`id`, `name`, `role`, `email`, `isAdmin`) is persisted to `localStorage` under `lexdash_auth`
+2. **Session Management** — On successful login, a session object (`id`, `name`, `role`, `email`, `isAdmin`) is persisted to `localStorage` under `brieflytix_auth`
 3. **Auto Session Refresh** — On every page load, `loadUser()` in `App.jsx` automatically syncs the session with the latest user data, ensuring name/role changes are reflected without re-login
 4. **Request Identity** — Axios interceptors attach `x-user-name` and `x-user-email` headers to every API request, enabling per-user features like notification read tracking
 5. **Role-Based Access** — Admin-only routes (e.g., `/users`) are protected with client-side guards that redirect unauthorized users to the dashboard
@@ -433,7 +433,7 @@ LexDash implements a **client-side authentication** system with role-based acces
 
 ## Notifications
 
-LexDash has a **dual notification system**:
+Brieflytix has a **dual notification system**:
 
 ### Backend Notifications (MongoDB)
 
@@ -566,7 +566,7 @@ All 5 default attorneys are referenced throughout:
 
 ## Smart Defaults
 
-LexDash reduces repetitive data entry with intelligent form defaults:
+Brieflytix reduces repetitive data entry with intelligent form defaults:
 
 - **Attorney auto-fill** — When creating a new case, document, or invoice, the logged-in attorney is automatically selected as the assigned attorney / uploader. You can still change it to another attorney if needed.
 - **Case → Client + Attorney** — In the billing form, selecting a case auto-fills both the client and the assigned attorney from that case.
@@ -616,12 +616,12 @@ Colors, font families, and semantic tokens are configured in `tailwind.config.js
 
 ### Backend (`backend/.env`)
 
-| Variable       | Default                             | Description               |
-| -------------- | ----------------------------------- | ------------------------- |
-| `PORT`         | `5000`                              | Express server port       |
-| `MONGODB_URI`  | `mongodb://localhost:27017/lexdash` | MongoDB connection string |
-| `NODE_ENV`     | `development`                       | Environment mode          |
-| `FRONTEND_URL` | `http://localhost:5173`             | Allowed CORS origin       |
+| Variable       | Default                                | Description               |
+| -------------- | -------------------------------------- | ------------------------- |
+| `PORT`         | `5000`                                 | Express server port       |
+| `MONGODB_URI`  | `mongodb://localhost:27017/brieflytix` | MongoDB connection string |
+| `NODE_ENV`     | `development`                          | Environment mode          |
+| `FRONTEND_URL` | `http://localhost:5173`                | Allowed CORS origin       |
 
 ### Frontend (`frontend/.env`)
 
@@ -654,20 +654,20 @@ npm run preview  # Preview production build locally
 
 ## Troubleshooting
 
-| Problem                       | Solution                                                                                                                                           |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **MongoDB connection error**  | Ensure MongoDB is running (`mongod`) and `MONGODB_URI` in `.env` is correct                                                                        |
-| **CORS errors**               | Verify `FRONTEND_URL` in backend `.env` matches the frontend origin                                                                                |
-| **Old user names showing**    | The app uses versioned localStorage — refresh the page. If names still persist, clear `lexdash_users` and `lexdash_auth` from browser localStorage |
-| **Old notifications showing** | Clear `lexdash_notifications` from browser localStorage, then refresh                                                                              |
-| **Seed button not working**   | Ensure the backend is running and accessible at the configured URL                                                                                 |
-| **File upload fails**         | Check that `backend/uploads/` directory exists (auto-created on first upload) and file is under 20MB                                               |
-| **Blank page after build**    | Run `npm run build` in the frontend directory and check for any build errors                                                                       |
-| **Port already in use**       | Change `PORT` in backend `.env` or kill the process using the port                                                                                 |
+| Problem                       | Solution                                                                                                                                                 |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **MongoDB connection error**  | Ensure MongoDB is running (`mongod`) and `MONGODB_URI` in `.env` is correct                                                                              |
+| **CORS errors**               | Verify `FRONTEND_URL` in backend `.env` matches the frontend origin                                                                                      |
+| **Old user names showing**    | The app uses versioned localStorage — refresh the page. If names still persist, clear `brieflytix_users` and `brieflytix_auth` from browser localStorage |
+| **Old notifications showing** | Clear `brieflytix_notifications` from browser localStorage, then refresh                                                                                 |
+| **Seed button not working**   | Ensure the backend is running and accessible at the configured URL                                                                                       |
+| **File upload fails**         | Check that `backend/uploads/` directory exists (auto-created on first upload) and file is under 20MB                                                     |
+| **Blank page after build**    | Run `npm run build` in the frontend directory and check for any build errors                                                                             |
+| **Port already in use**       | Change `PORT` in backend `.env` or kill the process using the port                                                                                       |
 
 ---
 
 <p align="center">
-  <strong>⚖️ LexDash</strong> — Built for attorneys who demand clarity.<br>
+  <strong>⚖️ Brieflytix</strong> — Built for attorneys who demand clarity.<br>
   <sub>MERN Stack · Dark Theme · Real-Time Analytics · Smart Defaults</sub>
 </p>

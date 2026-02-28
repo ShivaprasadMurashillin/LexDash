@@ -1,5 +1,5 @@
 /**
- * LexDash – MongoDB Connection
+ * Brieflytix – MongoDB Connection
  */
 const mongoose = require('mongoose');
 

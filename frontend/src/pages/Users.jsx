@@ -120,7 +120,7 @@ function UserModal({ isOpen, onClose, initialData, onSubmit, currentUserId }) {
                 value={form.email}
                 onChange={(e) => !isEdit && set('email', e.target.value)}
                 readOnly={isEdit}
-                placeholder="name@lexdash.com"
+                placeholder="name@brieflytix.com"
               />
               {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
             </div>
@@ -433,7 +433,7 @@ export default function Users({ currentUserId }) {
               <span className="text-lex-text font-semibold">
                 {users.find((u) => u.id === deleteId)?.name}
               </span>{' '}
-              will lose all access to LexDash. This cannot be undone.
+              will lose all access to Brieflytix. This cannot be undone.
             </p>
             <div className="flex justify-end gap-3">
               <button onClick={() => setConfirmOpen(false)} className="btn-ghost">Cancel</button>

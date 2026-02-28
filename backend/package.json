@@ -1,7 +1,7 @@
 {
-  "name": "lexdash-backend",
+  "name": "brieflytix-backend",
   "version": "1.0.0",
-  "description": "LexDash Attorney Case Management API",
+  "description": "Brieflytix Attorney Case Management API",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

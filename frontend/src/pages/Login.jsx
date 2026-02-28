@@ -3,9 +3,9 @@ import { Scale, Eye, EyeOff, LogIn, AlertCircle } from 'lucide-react';
 import { findUser } from '../utils/userStore';
 
 /**
- * LexDash Login Page
+ * Brieflytix Login Page
  * Credentials are managed in localStorage via userStore.
- * Default admin: admin@lexdash.com / LexDash2026
+ * Default admin: admin@brieflytix.com / Brieflytix2026
  */
 
 export default function Login({ onLogin }) {
@@ -55,7 +55,7 @@ export default function Login({ onLogin }) {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 mb-4 shadow-gold">
             <Scale size={32} className="text-gold" />
           </div>
-          <h1 className="font-heading text-4xl font-bold text-gold tracking-wide">LexDash</h1>
+          <h1 className="font-heading text-4xl font-bold text-gold tracking-wide">Brieflytix</h1>
           <p className="text-lex-muted text-sm mt-1">Attorney Case Management System</p>
         </div>
 
@@ -82,7 +82,7 @@ export default function Login({ onLogin }) {
                 type="email"
                 value={email}
                 onChange={(e) => { setEmail(e.target.value); setError(''); }}
-                placeholder="yourname@lexdash.com"
+                placeholder="yourname@brieflytix.com"
                 className="input"
                 autoComplete="email"
                 autoFocus
@@ -134,15 +134,15 @@ export default function Login({ onLogin }) {
           <div className="mt-6 p-4 rounded-lg bg-navy-700 border border-navy-600">
             <p className="text-xs font-semibold text-lex-muted uppercase tracking-wider mb-2">Demo Credentials</p>
             <div className="space-y-1 text-xs text-lex-muted font-mono">
-              <p><span className="text-gold">Email:</span>    admin@lexdash.com</p>
-              <p><span className="text-gold">Password:</span> LexDash2026</p>
+              <p><span className="text-gold">Email:</span>    admin@brieflytix.com</p>
+              <p><span className="text-gold">Password:</span> Brieflytix2026</p>
             </div>
           </div>
         </div>
 
         {/* Footer */}
         <p className="text-center text-xs text-lex-muted mt-6">
-          ⚖️ LexDash © 2026 · Confidential Legal Platform
+          ⚖️ Brieflytix © 2026 · Confidential Legal Platform
         </p>
       </div>
     </div>

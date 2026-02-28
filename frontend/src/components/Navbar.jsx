@@ -29,7 +29,7 @@ function initials(name = '') {
 export default function Navbar({ onMenuClick, user, onLogout }) {
   const { pathname } = useLocation();
   const navigate     = useNavigate();
-  const { title, sub } = PAGE_TITLES[pathname] ?? { title: 'LexDash', sub: '' };
+  const { title, sub } = PAGE_TITLES[pathname] ?? { title: 'Brieflytix', sub: '' };
 
   const [notifOpen,     setNotifOpen]     = useState(false);
   const [notifications, setNotifications] = useState([]);

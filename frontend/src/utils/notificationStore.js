@@ -4,8 +4,8 @@
  * Seeds 5 demo notifications on first run.
  */
 
-const NOTIF_KEY = 'lexdash_notifications';
-const NOTIF_VERSION_KEY = 'lexdash_notifications_version';
+const NOTIF_KEY = 'brieflytix_notifications';
+const NOTIF_VERSION_KEY = 'brieflytix_notifications_version';
 const NOTIF_CURRENT_VERSION = 2; // bump to force localStorage refresh
 
 const ago = (minutes) =>

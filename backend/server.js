@@ -1,5 +1,5 @@
 /**
- * LexDash – Express Server Entry Point
+ * Brieflytix – Express Server Entry Point
  */
 require('dotenv').config();
 const express = require('express');
@@ -43,7 +43,7 @@ app.use('/api/seed',          require('./routes/seed'));
 
 // Health check
 app.get('/api/health', (_req, res) =>
-  res.json({ status: 'ok', message: '⚖️  LexDash API is running' })
+  res.json({ status: 'ok', message: '⚖️  Brieflytix API is running' })
 );
 
 // ── Global Error Handler ──────────────────────────────────────────────────────
@@ -59,6 +59,6 @@ app.use((err, _req, res, _next) => {
 // ── Start Server ──────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 LexDash server running on http://localhost:${PORT}`);
+  console.log(`🚀 Brieflytix server running on http://localhost:${PORT}`);
   console.log(`📊 Seed the database: GET http://localhost:${PORT}/api/seed`);
 });
